@@ -1,0 +1,13 @@
+body.on #slide-1 h1 {
+    animation-name: title-position;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+body.on #slide-1 .img {
+    background: url('../assets/lampe.png') no-repeat;
+    background-size: contain;
+    margin-top: 70px;
+    width: 417px;
+    height: 230px;
+}

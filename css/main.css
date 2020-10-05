@@ -9,6 +9,7 @@
     align-items: center;
     background: radial-gradient(ellipse at center, rgb(82, 20, 120) 0%, rgba(21, 6, 37, 1) 100%), linear-gradient(#000000 0%, #000000 100%);
     overflow: hidden;
+    position: relative;
 }
 
 .on .slide .slide-content{
@@ -27,7 +28,7 @@
 
 }
 
-.on h1, .on h2 {
+.on h1, .on h2, .on h3, .on h4, .on p {
     font-family: 'EB Garamond', serif;
     font-weight: normal;
 }
@@ -73,67 +74,12 @@ body.on {
 
 }
 
-body.on #slide-1 h1 {
-    animation-name: title-position;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-}
-
-.on #slide-1 .img {
-    background: url('assets/lampe.png') no-repeat;
-    background-size: contain;
-    margin-top: 70px;
-    width: 417px;
-    height: 230px;
-}
-
-body.on #slide-2 .door {
-    display: block;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    background: #fdf3c1;
-    height: 200px;
-    width: 115px;
-    transform: skewY(8deg);
-    margin-bottom: 70px;
-    box-shadow: -2px -1px 9px 1px #fdf3c1;
-    position: relative;
-    transition: all 1s ease-in-out
-}
-
-body.on #slide-2 .door:after {
-    content: '';
-    display: block;
-    width: 195px;
-    height: 13px;
-    background: #fdf3c1;
-    border-radius: 100% 100% 0 100%;
-    position: absolute;
-    bottom: -24px;
-    right: 12%;
-    box-shadow: 0px 0px 9px 13px #fdf3c1;
-    transform: rotate(-16deg);
-    opacity: 0.6;
-}
-
 body.on .slide:focus{
     outline: 0;
 }
 
-body.on #slide-2:focus .door{
-    transform: scale(20) skewY(0deg);
-}
-body.on #slide-2:focus .door:after{
-    content: none;
-}
 
-body.on #slide-3 {
-    background: #fdf3c1;
-}
 
-body.on #slide-3 {
-    color: black;
-}
 
 body.on .slide {
     animation-name: background;

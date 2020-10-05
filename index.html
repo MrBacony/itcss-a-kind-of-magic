@@ -2,11 +2,16 @@
 <head>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=EB+Garamond">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="variables.css">
-    <link rel="stylesheet" href="animations.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/slide-1.css">
+    <link rel="stylesheet" href="css/slide-2.css">
+    <link rel="stylesheet" href="css/slide-3.css">
 </head>
-<body class="off">
+<body class="on">
 <div class="slides">
     <div id="slide-1" class="slide" tabindex="-1">
         <div class="slide-content">
@@ -28,8 +33,580 @@
     </div>
     <div id="slide-3" class="slide" tabindex="-1">
         <div class="slide-content">
+        <section class="section book-container">
+            <input type="radio" id="cover-front" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-1" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-2" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-3" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-4" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-5" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-6" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-7" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-8" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="book-page-9" name="book" class="hidden-control" tabindex="-1">
+            <input type="radio" id="cover-back" name="book" class="hidden-control" tabindex="-1">
+            <div class="book">
+                <label for="cover-front">
+                    <div class="book-page book-cover shadow">
+                        <div class="cover">
+                            <h1>Once upon a time...</h1>
+                        </div>
+                        <div class="inner-cover">
+                            <div class="inlay"></div>
+                        </div>
+                    </div>
+                </label>
 
-            <h2>Walk through this door and you will see a world full of CSS magic and things beyond your horizon</h2>
+                <label for="book-page-1">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>...there were SELECTORS in CSS</h3>
+
+                                <h2>#id</h2>
+                                <h2>.class</h2>
+                                <h2>element</h2>
+
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    &lt;div id="box-1" class="box-item first">1&lt;/div>
+    &lt;div id="box-2" class="box-item active">2&lt;/div>
+    &lt;div id="box-3" class="box-item">3&lt;/div>
+    &lt;div id="box-4" class="box-item last">
+        &lt;div class="inner">4.1&lt;/div>
+        &lt;div class="inner">4.2&lt;/div>
+    &lt;/div>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="book-page-2">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>Base Selectors</h3>
+                            <p>Most of the time you need to style HTML via #id, .class or directly on the element</p>
+                            <h3 class="code-hl">Preview:</h3>
+                            <div class="example">
+                                <div class="box">
+                                    <div id="box-1" class="box-item first">1</div>
+                                    <div id="box-2" class="box-item active">2</div>
+                                    <div id="box-3" class="box-item">3</div>
+                                    <div id="box-4" class="box-item last">
+                                        <div class="inner">4.1</div>
+                                        <div class="inner">4.2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    <b>&lt;div id="box-1" class="box-item first">1&lt;/div></b>
+    <b>&lt;div id="box-2" class="box-item active">2&lt;/div></b>
+    <b>&lt;div id="box-3" class="box-item">3&lt;/div></b>
+    <b>&lt;div id="box-4" class="box-item last"></b>
+        <b>&lt;div class="inner">4.1&lt;/div></b>
+        <b>&lt;div class="inner">4.2&lt;/div></b>
+    <b>&lt;/div></b>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="book-page-3">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>Combinator Selectors</h3>
+                            <p>But you know, you also could select descendants:</p>
+                            <div class="code">
+                            <pre><code>.box div{
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                            </div>
+                            <h3 class="code-hl">Preview:</h3>
+                            <div class="example">
+                                <div class="box">
+                                    <div id="box-1" class="box-item first">1</div>
+                                    <div id="box-2" class="box-item active">2</div>
+                                    <div id="box-3" class="box-item">3</div>
+                                    <div id="box-4" class="box-item last">
+                                        <div class="inner">4.1</div>
+                                        <div class="inner">4.2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    <b>&lt;div id="box-1" class="box-item first">1&lt;/div></b>
+    <b>&lt;div id="box-2" class="box-item active">2&lt;/div></b>
+    <b>&lt;div id="box-3" class="box-item">3&lt;/div></b>
+    <b>&lt;div id="box-4" class="box-item last"></b>
+        &lt;div class="inner">4.1&lt;/div>
+        &lt;div class="inner">4.2&lt;/div>
+    <b>&lt;/div></b>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="book-page-4">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>Combinator Selectors</h3>
+                            <p>Maybe you know, how to select only the direct children:</p>
+                            <div class="code">
+                            <pre><code>.box > div{
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                            </div>
+                            <h3 class="code-hl">Preview:</h3>
+                            <div class="example">
+                                <div class="box">
+                                    <div id="box-1" class="box-item first">1</div>
+                                    <div id="box-2" class="box-item active">2</div>
+                                    <div id="box-3" class="box-item">3</div>
+                                    <div id="box-4" class="box-item last">
+                                        <div class="inner">4.1</div>
+                                        <div class="inner">4.2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    &lt;div id="box-1" class="box-item first">1&lt;/div>
+    &lt;div id="box-2" class="box-item active">2&lt;/div>
+    <b>&lt;div id="box-3" class="box-item">3&lt;/div></b>
+    &lt;div id="box-4" class="box-item last">
+        &lt;div class="inner">4.1&lt;/div>
+        &lt;div class="inner">4.2&lt;/div>
+    &lt;/div>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="book-page-5">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>Combinator Selectors</h3>
+                            <p>A selector for elements which immediately follow a former element:</p>
+                            <div class="code">
+                            <pre><code>.box .box-item.active + .box-item{
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                            </div>
+                            <h3 class="code-hl">Preview:</h3>
+                            <div class="example">
+                                <div class="box">
+                                    <div id="box-1" class="box-item first">1</div>
+                                    <div id="box-2" class="box-item active">2</div>
+                                    <div id="box-3" class="box-item">3</div>
+                                    <div id="box-4" class="box-item last">
+                                        <div class="inner">4.1</div>
+                                        <div class="inner">4.2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    &lt;div id="box-1" class="box-item first">1&lt;/div>
+    &lt;div id="box-2" class="box-item active">2&lt;/div>
+    <b>&lt;div id="box-3" class="box-item">3&lt;/div></b>
+    <b>&lt;div id="box-4" class="box-item last"></b>
+        &lt;div class="inner">4.1&lt;/div>
+        &lt;div class="inner">4.2&lt;/div>
+    <b>&lt;/div></b>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="book-page-6">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>Combinator Selectors</h3>
+                            <p>More general: A selector for all elements, following a former element</p>
+                            <div class="code">
+                            <pre><code>.box .box-item.active ~ .box-item{
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                            </div>
+                            <h3 class="code-hl">Preview:</h3>
+                            <div class="example">
+                                <div class="box">
+                                    <div id="box-1" class="box-item first">1</div>
+                                    <div id="box-2" class="box-item active">2</div>
+                                    <div id="box-3" class="box-item">3</div>
+                                    <div id="box-4" class="box-item last">
+                                        <div class="inner">4.1</div>
+                                        <div class="inner">4.2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    <b>&lt;div id="box-1" class="box-item" magic>1&lt;/div></b>
+    &lt;div id="box-2" class="box-item active">2&lt;/div>
+    &lt;div id="box-3" class="box-item">3&lt;/div>
+    <b>&lt;div id="box-4" class="box-item" magic="wonder"></b>
+        &lt;div class="inner">4.1&lt;/div>
+        &lt;div class="inner">4.2&lt;/div>
+    <b>&lt;/div></b>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="book-page-7">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>Attribute Selectors</h3>
+                            <p>Selector for element with a specific attribute:</p>
+                            <div class="code">
+                            <pre><code>.box-item[magic]{
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                            </div>
+                            <h3 class="code-hl">Preview:</h3>
+                            <div class="example">
+                                <div class="box">
+                                    <div id="box-1" class="box-item" magic>1</div>
+                                    <div id="box-2" class="box-item active">2</div>
+                                    <div id="box-3" class="box-item">3</div>
+                                    <div id="box-4" class="box-item" magic="wonder">
+                                        <div class="inner">4.1</div>
+                                        <div class="inner">4.2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    &lt;div id="box-1" class="box-item first">1&lt;/div>
+    &lt;div id="box-2" class="box-item" magic="wonka">
+        &lt;div class="inner">2.1&lt;/div>
+    &lt;/div>
+    <b>&lt;div id="box-3" class="box-item" magic="wonder"></b>
+        &lt;div class="inner">3.1&lt;/div>
+        &lt;div class="inner">3.2&lt;/div>
+    <b>&lt;/div></b>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="book-page-8">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>Attribute Selectors</h3>
+                            <p>Selector for element with a specific attribute with a specific value:</p>
+                            <div class="code">
+                            <pre><code>.box-item[magic="wonder"]{
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                            </div>
+                            <h3 class="code-hl">Preview:</h3>
+                            <div class="example">
+                                <div class="box">
+                                    <div id="box-1" class="box-item" magic>1</div>
+                                    <div id="box-2" class="box-item" magic="wonka">
+                                        <div class="inner">2.1</div>
+                                    </div>
+                                    <div id="box-3" class="box-item" magic="wonder">
+                                        <div class="inner">3.1</div>
+                                        <div class="inner">3.2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    &lt;div id="box-1" class="box-item first">1&lt;/div>
+    <b>&lt;div id="box-2" class="box-item" magic="wonka"></b>
+        &lt;div class="inner">2.1&lt;/div>
+    <b>&lt;/div></b>
+    <b>&lt;div id="box-3" class="box-item" magic="wonder"></b>
+        &lt;div class="inner">3.1&lt;/div>
+        &lt;div class="inner">3.2&lt;/div>
+    <b>&lt;/div></b>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="book-page-9">
+                    <div class="book-page">
+                        <div class="page-content front">
+                            <h3>Attribute Selectors</h3>
+                            <p>Selector for element with a specific attribute with a partly specific value:</p>
+                            <div class="code">
+                            <pre><code>.box-item[magic*="won"]{
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                            </div>
+                            <h3 class="code-hl">Preview:</h3>
+                            <div class="example">
+                                <div class="box">
+                                    <div id="box-1" class="box-item" magic>1</div>
+                                    <div id="box-2" class="box-item" magic="wonka">
+                                        <div class="inner">2.1</div>
+                                    </div>
+                                    <div id="box-3" class="box-item" magic="wonder">
+                                        <div class="inner">3.1</div>
+                                        <div class="inner">3.2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-content back">
+                            <h3 class="code-hl">Sample HTML:</h3>
+                            <div class="code">
+                                <pre><code>&lt;div class="box">
+    &lt;div id="box-1" class="box-item first">1&lt;/div>
+    <b>&lt;div id="box-2" class="box-item" magic="wonka"></b>
+        &lt;div class="inner">2.1&lt;/div>
+    <b>&lt;/div></b>
+    <b>&lt;div id="box-3" class="box-item" magic="wonder"></b>
+        &lt;div class="inner">3.1&lt;/div>
+        &lt;div class="inner">3.2&lt;/div>
+    <b>&lt;/div></b>
+&lt;/div></code></pre>
+                            </div>
+                            <h3 class="code-hl">Sample CSS:</h3>
+                            <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="cover-back">
+                    <div class="book-page book-cover-back shadow">
+                        <div class="inner-cover">
+                            <div class="inlay">
+                                <div class="empty-image" tabindex="1"></div>
+                                <h1>The End?</h1>
+                            </div>
+                        </div>
+                        <div class="cover">
+
+                        </div>
+
+                    </div>
+                </label>
+            </div>
+        </section>
         </div>
         <div class="slide-footer">
             <div class="page">2</div>

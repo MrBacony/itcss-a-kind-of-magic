@@ -1,0 +1,35 @@
+body.on #slide-2 .door {
+    display: block;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background: #fdf3c1;
+    height: 200px;
+    width: 115px;
+    transform: skewY(8deg);
+    margin-bottom: 70px;
+    box-shadow: -2px -1px 9px 1px #fdf3c1;
+    position: relative;
+    transition: all 1s ease-in-out
+}
+
+body.on #slide-2 .door:after {
+    content: '';
+    display: block;
+    width: 195px;
+    height: 13px;
+    background: #fdf3c1;
+    border-radius: 100% 100% 0 100%;
+    position: absolute;
+    bottom: -24px;
+    right: 12%;
+    box-shadow: 0 0 9px 13px #fdf3c1;
+    transform: rotate(-16deg);
+    opacity: 0.6;
+}
+
+body.on #slide-2:focus .door{
+    transform: scale(20) skewY(0deg);
+}
+body.on #slide-2:focus .door:after{
+    content: none;
+}
