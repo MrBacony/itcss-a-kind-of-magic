@@ -1,0 +1,44 @@
+body.on #slide-4 {
+    background: black;
+    transition: all 2s;
+}
+
+body.on #slide-4:focus {
+    position: relative;
+    background: radial-gradient(ellipse at center, #131900 0%, #000000 40%);
+}
+
+body.on #slide-4 .skull{
+    width: 200px;
+    height: 200px;
+    background: url(../assets/pseudo-elements/skull.png) no-repeat center center;
+    background-size: contain;
+    position: relative;
+    transition: opacity 2s;
+    opacity: 0;
+}
+
+body.on #slide-4 .skull:before{
+    content: '';
+    width: 400px;
+    height: 400px;
+    background: url(../assets/pseudo-elements/sun.png) no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    left: -100px;
+    top: -100px;
+}
+body.on #slide-4 .skull:after {
+    content: '';
+    width: 215px;
+    height: 215px;
+    background: url(../assets/pseudo-elements/moon.png) no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    left: 21px;
+    top: -7px;
+}
+
+body.on #slide-4:focus .skull{
+    opacity: 1;
+}
