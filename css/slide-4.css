@@ -1,10 +1,10 @@
 body.on #slide-4 {
     background: black;
-    transition: all 2s;
+    transition: all 4s;
+    position: relative;
 }
 
-body.on #slide-4:focus {
-    position: relative;
+body.on #slide-4:focus-within {
     background: radial-gradient(ellipse at center, #131900 0%, #000000 40%);
 }
 
@@ -14,11 +14,11 @@ body.on #slide-4 .skull{
     background: url(../assets/pseudo-elements/skull.png) no-repeat center center;
     background-size: contain;
     position: relative;
-    transition: opacity 2s;
+    transition: opacity 4s;
     opacity: 0;
 }
 
-body.on #slide-4 .skull:before{
+body.on #slide-4 .skull:after{
     content: '';
     width: 400px;
     height: 400px;
@@ -27,8 +27,10 @@ body.on #slide-4 .skull:before{
     position: absolute;
     left: -100px;
     top: -100px;
+    z-index: 0;
+    transition: left 4s;
 }
-body.on #slide-4 .skull:after {
+body.on #slide-4 .skull:before {
     content: '';
     width: 215px;
     height: 215px;
@@ -37,8 +39,69 @@ body.on #slide-4 .skull:after {
     position: absolute;
     left: 21px;
     top: -7px;
+    z-index: 1;
+    transition: left 4s;
 }
 
 body.on #slide-4:focus .skull{
     opacity: 1;
+}
+
+body.on #slide-4 input[name="skull"]:checked ~ .skull {
+    opacity: 1;
+}
+
+body.on #slide-4 #skull-start:checked ~ .skull:after,
+body.on #slide-4 #skull-before:checked ~ .skull:after {
+    left: -100px;
+}
+
+body.on #slide-4 #skull-start:checked ~ .skull:before{
+    left: 21px;
+}
+
+body.on #slide-4 #skull-before:checked ~ .skull:before {
+    left: 350px;
+}
+
+body.on #slide-4 #skull-after:checked ~ .skull:before {
+    left: 350px;
+}
+body.on #slide-4 #skull-after:checked ~ .skull:after {
+    left: -450px;
+}
+
+body.on #slide-4 #skull-before:checked ~ label[for='skull-before'] {
+
+}
+
+body.on #slide-4 #skull-before:checked ~ label[for='skull-before'] {
+    display: none;
+}
+body.on #slide-4 #skull-after:checked ~ label[for='skull-before'],
+body.on #slide-4 #skull-after:checked ~ label[for='skull-after'] {
+    display: none;
+}
+
+body.on #slide-4 label[for='skull-start'] {
+    right: 0;
+}
+body.on #slide-4 label {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    z-index: 10;
+}
+
+body.on #slide-4 .hidden-control:nth-of-type(1) {
+    left: calc(20px * 0);
+}
+body.on #slide-4 .hidden-control:nth-of-type(2) {
+    left: calc(20px * 1);
+}
+body.on #slide-4 .hidden-control:nth-of-type(3){
+    left: calc(20px * 2);
+}
+body.on #slide-4 .hidden-control:nth-of-type(4) {
+    left: calc(20px * 3);
 }
