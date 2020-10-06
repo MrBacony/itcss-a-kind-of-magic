@@ -1,6 +1,6 @@
 body.on .hidden-control {
     position: absolute;
-    /*opacity: 0;*/
+    opacity: 0;
 }
 
 body.on .shadow {

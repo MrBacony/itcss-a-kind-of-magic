@@ -1,3 +1,20 @@
+@keyframes fade-in {
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-out {
+     0% {
+         opacity: 1;
+     }
+     50% {
+         opacity: 0;
+     }
+ }
+
 body.on #slide-4 {
     background: black;
     transition: all 4s;
@@ -8,17 +25,76 @@ body.on #slide-4:focus-within {
     background: radial-gradient(ellipse at center, #131900 0%, #000000 40%);
 }
 
-body.on #slide-4 .skull{
-    width: 200px;
+body.on #slide-4 .transformation-box .skull{
+    width: 240px;
+    min-width: 240px;
     height: 200px;
     background: url(../assets/pseudo-elements/skull.png) no-repeat center center;
     background-size: contain;
     position: relative;
-    transition: opacity 4s;
+    transition: all 2s;
     opacity: 0;
+
+    left: 0;
+    top: 0;
 }
 
-body.on #slide-4 .skull:after{
+body.on #slide-4 .transformation-box .content-explain {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255, 0.5);
+    width: 400px;
+    height: 270px;
+    position: absolute;
+    top: 95px;
+    background: rgba(255,255,255, 0.1);
+    color: white;
+}
+
+body.on #slide-4 .transformation-box .content-explain h3 > code {
+    color: #888;
+    border: 1px solid #888;
+    padding: 4px;
+    margin: 0 8px;
+}
+
+body.on #slide-4 .transformation-box > h2 {
+    opacity: 0;
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    font-size: 5rem;
+}
+body.on #slide-4 .transformation-box h2.label-before {
+    color: #f8f8f8;
+    left: 440px;
+}
+body.on #slide-4 .transformation-box h2.label-after {
+    color: #eac233;
+    left: -215px;
+}
+
+body.on #slide-4 .transformation-box h2.label-pseudo {
+    color: #ffffff;
+    left: unset;
+    top: unset;
+    white-space: nowrap;
+    bottom: -200px;
+}
+
+body.on #slide-4 .transformation-box {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0;
+}
+
+body.on #slide-4 .transformation-box .skull:after{
     content: '';
     width: 400px;
     height: 400px;
@@ -30,7 +106,7 @@ body.on #slide-4 .skull:after{
     z-index: 0;
     transition: left 4s;
 }
-body.on #slide-4 .skull:before {
+body.on #slide-4 .transformation-box .skull:before {
     content: '';
     width: 215px;
     height: 215px;
@@ -43,50 +119,93 @@ body.on #slide-4 .skull:before {
     transition: left 4s;
 }
 
-body.on #slide-4:focus .skull{
+body.on #slide-4:focus-within .transformation-box .skull{
     opacity: 1;
 }
 
-body.on #slide-4 input[name="skull"]:checked ~ .skull {
+body.on #slide-4 input[name="skull"]:checked ~ .transformation-box .skull {
     opacity: 1;
 }
 
-body.on #slide-4 #skull-start:checked ~ .skull:after,
-body.on #slide-4 #skull-before:checked ~ .skull:after {
+body.on #slide-4 #skull-before:checked ~ .transformation-box .label-before {
+    animation: fade-in;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+body.on #slide-4 #skull-after:checked ~ .transformation-box .label-after {
+    animation: fade-in;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+body.on #slide-4 #skull-finish:checked ~ .transformation-box .label-pseudo {
+    animation: fade-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+body.on #slide-4 #skull-explain:checked ~ .transformation-box .label-pseudo {
+    transition: opacity 2s;
+    opacity: 0;
+}
+body.on #slide-4 #skull-explain:checked ~ .transformation-box .skull {
+    transform: scale(0.7);
+    left: 300px;
+    top: -200px;
+}
+
+body.on #slide-4 #skull-explain:checked ~ .transformation-box .content-explain {
+    animation: fade-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+body.on #slide-4 #skull-after:checked ~ .transformation-box .label-before {
+    opacity: 1;
+}
+body.on #slide-4 #skull-after:checked ~ .transformation-box .skull:after{
     left: -100px;
 }
 
-body.on #slide-4 #skull-start:checked ~ .skull:before{
+body.on #slide-4 #skull-start:checked ~ .transformation-box .skull:before{
     left: 21px;
 }
 
-body.on #slide-4 #skull-before:checked ~ .skull:before {
+body.on #slide-4 #skull-before:checked ~ .transformation-box .skull:before {
     left: 350px;
 }
 
-body.on #slide-4 #skull-after:checked ~ .skull:before {
+body.on #slide-4 #skull-after:checked ~ .transformation-box .skull:before {
     left: 350px;
 }
-body.on #slide-4 #skull-after:checked ~ .skull:after {
+body.on #slide-4 #skull-after:checked ~ .transformation-box .skull:after {
     left: -450px;
 }
 
-body.on #slide-4 #skull-before:checked ~ label[for='skull-before'] {
+body.on #slide-4 #skull-before:checked ~ .transformation-box label[for='skull-before'] {
 
 }
 
-body.on #slide-4 #skull-before:checked ~ label[for='skull-before'] {
+body.on #slide-4 #skull-before:checked ~ .transformation-box label[for='skull-before'] {
     display: none;
 }
-body.on #slide-4 #skull-after:checked ~ label[for='skull-before'],
-body.on #slide-4 #skull-after:checked ~ label[for='skull-after'] {
+body.on #slide-4 #skull-after:checked ~ .transformation-box label[for='skull-before'],
+body.on #slide-4 #skull-after:checked ~ .transformation-box label[for='skull-after'] {
     display: none;
 }
 
-body.on #slide-4 label[for='skull-start'] {
-    right: 0;
+body.on #slide-4 .transformation-box label[for='skull-start'] {
+    bottom: -270px;
 }
-body.on #slide-4 label {
+
+body.on #slide-4 .transformation-box label[for='skull-explain'] {
+    bottom: -270px;
+}
+
+body.on #slide-4 .transformation-box label {
     position: absolute;
     width: 270px;
     height: 270px;
@@ -104,4 +223,7 @@ body.on #slide-4 .hidden-control:nth-of-type(3){
 }
 body.on #slide-4 .hidden-control:nth-of-type(4) {
     left: calc(20px * 3);
+}
+body.on #slide-4 .hidden-control:nth-of-type(5) {
+    left: calc(20px * 4);
 }
