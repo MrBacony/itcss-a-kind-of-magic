@@ -75,7 +75,7 @@ body.on #slide-5 .content .torch .wood .inner {
     width: 150px;
     height: 150px;
     background: linear-gradient(-45deg, var(--fire-color-primary), var(--fire-color-accent));
-    border-radius: 150px 150px 0px 150px;
+    border-radius: 150px 150px 0 150px;
     transform: scale(0.5) rotate(-135deg);
     animation: .7s flame infinite;
     filter: blur(10px);
@@ -99,7 +99,7 @@ body.on #slide-5 .content .torch .wood .inner {
     background: linear-gradient(-45deg, var(--fire-color-primary), var(--fire-color-accent));
     animation: .7s flame-before infinite;
     transform: scale(.8) rotate(20deg);
-    border-radius: 100px 100px 0px 100px;
+    border-radius: 100px 100px 0 100px;
     top: 20px;
 }
 
@@ -275,7 +275,7 @@ body.on #slide-5 .content .circles .inner-circle {
     margin: 0 auto;
     left: 20%;
     top: 20%;
-    box-shadow: 1px 0 11px 0px rgba(0,0,0,0.4);
+    box-shadow: 1px 0 11px 0 rgba(0,0,0,0.4);
 }
 
 body.on #slide-5 .content .circles .inner-circle .circle-pointer {
