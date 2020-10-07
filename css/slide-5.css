@@ -154,6 +154,8 @@ body.on #slide-5 .content .circles .outer-circle {
     background: url(../assets/stone_transparent.png), radial-gradient(ellipse at center, #1d1d1d 0%, #292929 68%, #000000 73%);
     position: absolute;
     transform: rotate(0deg);
+
+    transition: all ease-out 2s;
 }
 
 body.on #slide-5 .content .circles .outer-circle .fire-symbol{
@@ -170,6 +172,14 @@ body.on #slide-5 .content .circles .outer-circle .fire-symbol{
     --fire-color-shadow: #700;
     --fire-color-glimmer: #ffb66b;
 }
+body.on #slide-5 .content .circles .outer-circle .fire-symbol label {
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    position: absolute;
+}
+
 body.on #slide-5 .content .circles .outer-circle .fire-symbol svg path:last-of-type {
     fill: var(--fire-color-primary);
     stroke: none;
@@ -184,12 +194,7 @@ body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(2) {
     right: -37px;
     top: -37px;
     left: unset;
-    --fire-color-primary: #ffffff;
-    --fire-color-accent: #4a83f8;
-    --fire-color-shadow: #001560;
-    --fire-color-glimmer: #6bb3ff;
 }
-
 
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(3) {
     transform: rotate(90deg) scale(0.2);
@@ -197,33 +202,20 @@ body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(3) {
     top: 50%;
     left: unset;
     margin-top: -150px;
-
-    --fire-color-primary: #327700;
-    --fire-color-accent: #79ef59;
-    --fire-color-shadow: #2a5a15;
-    --fire-color-glimmer: #699f5a;
 }
+
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(4) {
     transform: rotate(135deg) scale(0.2);
     right: -37px;
     bottom: -37px;
     left: unset;
     top: unset;
-
-    --fire-color-primary: #774100;
-    --fire-color-accent: #efd659;
-    --fire-color-shadow: #5a4115;
-    --fire-color-glimmer: #9f8b5a;
 }
+
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(5) {
     top: unset;
     bottom: -100px;
     transform: rotate(180deg) scale(0.2);
-
-    --fire-color-primary: #770000;
-    --fire-color-accent: #ef5959;
-    --fire-color-shadow: #5a1515;
-    --fire-color-glimmer: #9f5a5a;
 }
 
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(6) {
@@ -232,11 +224,6 @@ body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(6) {
     bottom: -37px;
     top: unset;
     margin-left: 0;
-
-    --fire-color-primary: #3c0077;
-    --fire-color-accent: #8e59ef;
-    --fire-color-shadow: #1f155a;
-    --fire-color-glimmer: #6f5a9f;
 }
 
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(7) {
@@ -245,12 +232,6 @@ body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(7) {
     top: 50%;
     margin-top: -150px;
     margin-left: 0;
-
-
-    --fire-color-primary: #001077;
-    --fire-color-accent: #597aef;
-    --fire-color-shadow: #15245a;
-    --fire-color-glimmer: #5a639f;
 }
 
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(8) {
@@ -258,12 +239,6 @@ body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(8) {
     left: -37px;
     top: -37px;
     margin-left: 0;
-
-
-    --fire-color-primary: #ffc469;
-    --fire-color-accent: #ffdec4;
-    --fire-color-shadow: #ffaeae;
-    --fire-color-glimmer: #ffe5bb;
 }
 
 body.on #slide-5 .content .circles .inner-circle {
@@ -297,4 +272,85 @@ body.on #slide-5 .content .circles .inner-circle .torch {
     left: 50%;
     top: 10px;
     margin-left: -25px;
+}
+
+
+/* WHEEL CLICKS */
+body.on #slide-5 #flame-1:checked ~ .circles .outer-circle {
+    transform: rotate(0deg);
+}
+body.on #slide-5 #flame-2:checked ~ .circles .outer-circle {
+    transform: rotate(-45deg);
+}
+body.on #slide-5 #flame-3:checked ~ .circles .outer-circle {
+    transform: rotate(-90deg);
+}
+body.on #slide-5 #flame-4:checked ~ .circles .outer-circle {
+    transform: rotate(-135deg);
+}
+body.on #slide-5 #flame-5:checked ~ .circles .outer-circle {
+    transform: rotate(-180deg);
+}
+body.on #slide-5 #flame-6:checked ~ .circles .outer-circle {
+    transform: rotate(-225deg);
+}
+body.on #slide-5 #flame-7:checked ~ .circles .outer-circle {
+    transform: rotate(-270deg);
+}
+body.on #slide-5 #flame-8:checked ~ .circles .outer-circle {
+    transform: rotate(-315deg);
+}
+
+
+
+body.on #slide-5 #flame-1:checked ~ .torch {
+}
+body.on #slide-5 #flame-2:checked ~ .torch,
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(2){
+    --fire-color-primary: #ffffff;
+    --fire-color-accent: #4a83f8;
+    --fire-color-shadow: #001560;
+    --fire-color-glimmer: #6bb3ff;
+}
+body.on #slide-5 #flame-3:checked ~ .torch,
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(3){
+    --fire-color-primary: #327700;
+    --fire-color-accent: #79ef59;
+    --fire-color-shadow: #2a5a15;
+    --fire-color-glimmer: #699f5a;
+}
+body.on #slide-5 #flame-4:checked ~ .torch,
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(4){
+    --fire-color-primary: #774100;
+    --fire-color-accent: #efd659;
+    --fire-color-shadow: #5a4115;
+    --fire-color-glimmer: #9f8b5a;
+}
+body.on #slide-5 #flame-5:checked ~ .torch,
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(5){
+    --fire-color-primary: #770000;
+    --fire-color-accent: #ef5959;
+    --fire-color-shadow: #5a1515;
+    --fire-color-glimmer: #bf6d5a;
+}
+body.on #slide-5 #flame-6:checked ~ .torch,
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(6) {
+    --fire-color-primary: #3c0077;
+    --fire-color-accent: #8e59ef;
+    --fire-color-shadow: #1f155a;
+    --fire-color-glimmer: #6f5a9f;
+}
+body.on #slide-5 #flame-7:checked ~ .torch,
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(7){
+    --fire-color-primary: #001077;
+    --fire-color-accent: #597aef;
+    --fire-color-shadow: #15245a;
+    --fire-color-glimmer: #5a639f;
+}
+body.on #slide-5 #flame-8:checked ~ .torch,
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(8){
+    --fire-color-primary: #ffc469;
+    --fire-color-accent: #ffdec4;
+    --fire-color-shadow: #ffaeae;
+    --fire-color-glimmer: #ffe5bb;
 }
