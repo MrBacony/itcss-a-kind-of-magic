@@ -1,5 +1,14 @@
+/* VARIABLES */
 body.on #slide-5 {
-    background: radial-gradient(ellipse at center, #111111 0%,#000000 51%,#111111 90%);;
+    --fire-color-primary: #700;
+    --fire-color-accent: orange;
+    --fire-color-shadow: #700;
+    --fire-color-glimmer: #ffb66b;
+}
+
+
+body.on #slide-5 {
+    background: url(../assets/cave_transparent.png), radial-gradient(ellipse at center, #000000 0%,#000000 51%,#111 90%);
 }
 
 body.on #slide-5 .slide-content > h1 {
@@ -56,7 +65,7 @@ body.on #slide-5 .content .torch .wood .inner {
     height: 289px;
     transform: skew(4deg, 0);
     overflow: hidden;
-    background: linear-gradient(93deg, #2d1201 0%, #603523 43%, #2f0f01 100%);
+    background: url(../assets/wood.png), linear-gradient(93deg, #2d1201 0%, #603523 43%, #2f0f01 100%);
     border-radius: 6px;
 }
 
@@ -65,13 +74,13 @@ body.on #slide-5 .content .torch .wood .inner {
 .flame {
     width: 150px;
     height: 150px;
-    background: linear-gradient(-45deg, red, orange);
+    background: linear-gradient(-45deg, var(--fire-color-primary), var(--fire-color-accent));
     border-radius: 150px 150px 0px 150px;
     transform: scale(0.5) rotate(-135deg);
     animation: .7s flame infinite;
     filter: blur(10px);
-    box-shadow: 17px 20px 90px #700;
-    border: 45px solid #ffb66b;
+    box-shadow: 17px 20px 90px var(--fire-color-shadow);
+    border: 45px solid var(--fire-color-glimmer);
     border-left-width: 25px;
     border-top-width: 25px;
     position: absolute;
@@ -87,7 +96,7 @@ body.on #slide-5 .content .torch .wood .inner {
     height: 100px;
     display: block;
     position: absolute;
-    background: linear-gradient(-45deg, red, orange);
+    background: linear-gradient(-45deg, var(--fire-color-primary), var(--fire-color-accent));
     animation: .7s flame-before infinite;
     transform: scale(.8) rotate(20deg);
     border-radius: 100px 100px 0px 100px;
@@ -142,45 +151,147 @@ body.on #slide-5 .content .circles .outer-circle {
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    background: radial-gradient(ellipse at center, #000000 0%, #171616 55%, #0a0a0a 90%);
+    background: url(../assets/stone_transparent.png), radial-gradient(ellipse at center, #000000 0%, #101010 68%, #000000 73%);
     position: absolute;
+    transform: rotate(0deg);
 }
 
-body.on #slide-5 .content .circles  hr {
+body.on #slide-5 .content .circles .outer-circle .fire-symbol{
+    transform: scale(0.2);
     position: absolute;
-    width: 100%;
-    top: calc(50%);
-    border-color: rgba(0,0,0,0.4);
+    left: 50%;
+    top: -100px;
+    margin-left: -150px;
+    width: 300px;
+    height: 300px;
+    filter: blur(5px);
+}
+body.on #slide-5 .content .circles .outer-circle .fire-symbol svg path:last-of-type {
+    fill: var(--fire-color-primary);
+    stroke: none;
+}
+body.on #slide-5 .content .circles .outer-circle .fire-symbol svg path:first-of-type {
+    fill: var(--fire-color-accent);
+    stroke: var(--fire-color-glimmer);
 }
 
-body.on #slide-5 .content .circles  hr:nth-of-type(1) {
-    transform: rotate(135deg);
-    left: 0;
-    top: calc(50%);
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(2) {
+    transform: rotate(45deg) scale(0.2);
+    right: -37px;
+    top: -37px;
+    left: unset;
+    --fire-color-primary: #ffffff;
+    --fire-color-accent: #4a83f8;
+    --fire-color-shadow: #001560;
+    --fire-color-glimmer: #6bb3ff;
 }
 
-body.on #slide-5 .content .circles  hr:nth-of-type(2) {
-    transform: rotate(90deg);
-    left: 0;
-    top: calc(50% - 10px);
+
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(3) {
+    transform: rotate(90deg) scale(0.2);
+    right: -100px;
+    top: 50%;
+    left: unset;
+    margin-top: -150px;
+
+    --fire-color-primary: #327700;
+    --fire-color-accent: #79ef59;
+    --fire-color-shadow: #2a5a15;
+    --fire-color-glimmer: #699f5a;
+}
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(4) {
+    transform: rotate(135deg) scale(0.2);
+    right: -37px;
+    bottom: -37px;
+    left: unset;
+    top: unset;
+
+    --fire-color-primary: #774100;
+    --fire-color-accent: #efd659;
+    --fire-color-shadow: #5a4115;
+    --fire-color-glimmer: #9f8b5a;
+}
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(5) {
+    top: unset;
+    bottom: -100px;
+    transform: rotate(180deg) scale(0.2);
+
+    --fire-color-primary: #770000;
+    --fire-color-accent: #ef5959;
+    --fire-color-shadow: #5a1515;
+    --fire-color-glimmer: #9f5a5a;
 }
 
-body.on #slide-5 .content .circles  hr:nth-of-type(3) {
-    transform: rotate(45deg);
-    left: 0px;
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(6) {
+    transform: rotate(-135deg) scale(0.2);
+    left: -37px;
+    bottom: -37px;
+    top: unset;
+    margin-left: 0;
+
+    --fire-color-primary: #3c0077;
+    --fire-color-accent: #8e59ef;
+    --fire-color-shadow: #1f155a;
+    --fire-color-glimmer: #6f5a9f;
 }
-body.on #slide-5 .content .circles  hr:nth-of-type(4) {
-    top(50% - 10px);
+
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(7) {
+    transform: rotate(-90deg) scale(0.2);
+    left: -100px;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: 0;
+
+
+    --fire-color-primary: #001077;
+    --fire-color-accent: #597aef;
+    --fire-color-shadow: #15245a;
+    --fire-color-glimmer: #5a639f;
+}
+
+body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(8) {
+    transform: rotate(-45deg) scale(0.2);
+    left: -37px;
+    top: -37px;
+    margin-left: 0;
+
+
+    --fire-color-primary: #ffc469;
+    --fire-color-accent: #ffdec4;
+    --fire-color-shadow: #ffaeae;
+    --fire-color-glimmer: #ffe5bb;
 }
 
 body.on #slide-5 .content .circles .inner-circle {
     width: 60%;
     height: 60%;
     border-radius: 100%;
-    background: radial-gradient(ellipse at center, #151414 0%, #1b1a1a 55%, #151414 90%);
+    background: url(../assets/stone_transparent.png), radial-gradient(ellipse at center, #0a0a0a 0%, #101010 68%, #000000 73%);
     position: absolute;
     margin: 0 auto;
     left: 20%;
     top: 20%;
     box-shadow: 1px 0 11px 0px rgba(0,0,0,0.4);
+}
+
+body.on #slide-5 .content .circles .inner-circle .circle-pointer {
+    width: 24px;
+    font-size: 24px;
+    transform: scaleX(2.5);
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    margin-left: -12px;
+    color: rgba(255, 207, 116, 0.7);
+    text-shadow: 1px 0 3px rgba(0,0,0,0.4);
+}
+
+body.on #slide-5 .content .circles .inner-circle .torch {
+    transform: scale(0.5);
+    filter: grayscale(1) blur(1px);
+    opacity: 0.3;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    margin-left: -25px;
 }
