@@ -71,7 +71,7 @@ body.on #slide-5 .content .torch .wood .inner {
 
 
 /* FLAME ANIMATION */
-.flame {
+body.on #slide-5 .content .flame {
     width: 150px;
     height: 150px;
     background: linear-gradient(-45deg, var(--fire-color-primary), var(--fire-color-accent));
@@ -89,8 +89,8 @@ body.on #slide-5 .content .torch .wood .inner {
     left: -76px;
 
 }
-.flame:after,
-.flame:before {
+body.on #slide-5 .content .flame:after,
+body.on #slide-5 .content .flame:before {
     content: '';
     width: 100px;
     height: 100px;
@@ -103,7 +103,7 @@ body.on #slide-5 .content .torch .wood .inner {
     top: 20px;
 }
 
-.flame:before {
+body.on #slide-5 .content .flame:before {
     top: 0;
     animation: flame-before;
     animation-duration: .24s;
