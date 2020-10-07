@@ -20,7 +20,69 @@ body.on #slide-5 .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     width: 80vw;
+    transition: all 2s;
+}
+body.on #slide-5 .cr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+body.on #slide-5 .content .cr:nth-of-type(2) {
+    justify-content: flex-end;
+}
+
+body.on #slide-5 .content .explain-button {
+    width: 181px;
+    height: 82px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 5px rgba(0,0,0,0.4);
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../assets/wood.png), #190700;
+    background-size: cover;
+    color: #b7926c;
+    font-weight: bold;
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+}
+
+body.on #slide-5 .content .explain-panel {
+    position: absolute;
+    right: -40vw;
+    background: url(../assets/wood.png), #190700;
+    background-size: cover;
+    color: #b7926c;
+    font-weight: bold;
+    font-family: 'EB Garamond', serif;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 5px rgba(0,0,0,0.4);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+body.on #slide-5 .content .explain-panel .code {
+    border: 1px solid rgba(0,0,0,0.2);
+    width: 100%;
+    background: rgba(255,255,255,0.4);
+    color: #241b13;
+    padding: 10px;
+}
+body.on #slide-5 .content .explain-button span:first-of-type {
+    display: block;
+}
+body.on #slide-5 .content .explain-button span:last-of-type {
+    display: none;
 }
 
 body.on #slide-5 .content .torch {
@@ -276,28 +338,28 @@ body.on #slide-5 .content .circles .inner-circle .torch {
 
 
 /* WHEEL CLICKS */
-body.on #slide-5 #flame-1:checked ~ .circles .outer-circle {
+body.on #slide-5 #flame-1:checked ~ .content .cr .circles .outer-circle {
     transform: rotate(0deg);
 }
-body.on #slide-5 #flame-2:checked ~ .circles .outer-circle {
+body.on #slide-5 #flame-2:checked ~ .content .cr .circles .outer-circle {
     transform: rotate(-45deg);
 }
-body.on #slide-5 #flame-3:checked ~ .circles .outer-circle {
+body.on #slide-5 #flame-3:checked ~ .content .cr .circles .outer-circle {
     transform: rotate(-90deg);
 }
-body.on #slide-5 #flame-4:checked ~ .circles .outer-circle {
+body.on #slide-5 #flame-4:checked ~ .content .cr .circles .outer-circle {
     transform: rotate(-135deg);
 }
-body.on #slide-5 #flame-5:checked ~ .circles .outer-circle {
+body.on #slide-5 #flame-5:checked ~ .content .cr .circles .outer-circle {
     transform: rotate(-180deg);
 }
-body.on #slide-5 #flame-6:checked ~ .circles .outer-circle {
+body.on #slide-5 #flame-6:checked ~ .content .cr .circles .outer-circle {
     transform: rotate(-225deg);
 }
-body.on #slide-5 #flame-7:checked ~ .circles .outer-circle {
+body.on #slide-5 #flame-7:checked ~ .content .cr .circles .outer-circle {
     transform: rotate(-270deg);
 }
-body.on #slide-5 #flame-8:checked ~ .circles .outer-circle {
+body.on #slide-5 #flame-8:checked ~ .content .cr .circles .outer-circle {
     transform: rotate(-315deg);
 }
 
@@ -305,52 +367,63 @@ body.on #slide-5 #flame-8:checked ~ .circles .outer-circle {
 
 body.on #slide-5 #flame-1:checked ~ .torch {
 }
-body.on #slide-5 #flame-2:checked ~ .torch,
+body.on #slide-5 #flame-2:checked ~ .content .cr .torch,
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(2){
     --fire-color-primary: #ffffff;
     --fire-color-accent: #4a83f8;
     --fire-color-shadow: #001560;
     --fire-color-glimmer: #6bb3ff;
 }
-body.on #slide-5 #flame-3:checked ~ .torch,
+body.on #slide-5 #flame-3:checked ~ .content .cr .torch,
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(3){
     --fire-color-primary: #327700;
     --fire-color-accent: #79ef59;
     --fire-color-shadow: #2a5a15;
     --fire-color-glimmer: #699f5a;
 }
-body.on #slide-5 #flame-4:checked ~ .torch,
+body.on #slide-5 #flame-4:checked ~ .content .cr .torch,
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(4){
     --fire-color-primary: #774100;
     --fire-color-accent: #efd659;
     --fire-color-shadow: #5a4115;
     --fire-color-glimmer: #9f8b5a;
 }
-body.on #slide-5 #flame-5:checked ~ .torch,
+body.on #slide-5 #flame-5:checked ~ .content .cr .torch,
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(5){
     --fire-color-primary: #770000;
     --fire-color-accent: #ef5959;
     --fire-color-shadow: #5a1515;
     --fire-color-glimmer: #bf6d5a;
 }
-body.on #slide-5 #flame-6:checked ~ .torch,
+body.on #slide-5 #flame-6:checked ~ .content .cr .torch,
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(6) {
     --fire-color-primary: #3c0077;
     --fire-color-accent: #8e59ef;
     --fire-color-shadow: #1f155a;
     --fire-color-glimmer: #6f5a9f;
 }
-body.on #slide-5 #flame-7:checked ~ .torch,
+body.on #slide-5 #flame-7:checked ~ .content .cr .torch,
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(7){
     --fire-color-primary: #001077;
     --fire-color-accent: #597aef;
     --fire-color-shadow: #15245a;
     --fire-color-glimmer: #5a639f;
 }
-body.on #slide-5 #flame-8:checked ~ .torch,
+body.on #slide-5 #flame-8:checked ~ .content .cr .torch,
 body.on #slide-5 .content .circles .outer-circle .fire-symbol:nth-of-type(8){
     --fire-color-primary: #ffc469;
     --fire-color-accent: #ffdec4;
     --fire-color-shadow: #ffaeae;
     --fire-color-glimmer: #ffe5bb;
+}
+
+body.on #slide-5 #var-explain:checked ~ .content {
+    transform: translateX(-40vw);
+}
+
+body.on #slide-5 #var-explain:checked ~ .content .explain-button span:first-of-type {
+    display: none;
+}
+body.on #slide-5 #var-explain:checked ~ .content .explain-button span:last-of-type {
+    display: block;
 }
