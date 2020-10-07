@@ -1,3 +1,10 @@
+body.on #slide-6 {
+    --amim-duration: 3s;
+}
+
+body.on #slide-6 .machine-container {
+    position: relative;
+}
 body.on #slide-6 .machine-body {
     display: block;
     border: 1px solid;
@@ -8,6 +15,21 @@ body.on #slide-6 .machine-body {
     background: url(../assets/wood.png), #3c1202;
     background-size: cover;
     box-shadow: inset 0 0 5px 5px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+body.on #slide-6 .machine-door {
+    background: url(../assets/wood.png), #3c1202;
+    background-size: cover;
+    width: 20px;
+    height: 300px;
+    border: 1px solid;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 1;
+    transform: rotate(0deg);
 }
 
 body.on #slide-6 .machine-body .meter {
@@ -27,7 +49,7 @@ body.on #slide-6 .machine-body .meter {
 body.on #slide-6 .machine-body .meter:before {
     content: '';
     height: 220px;
-    border-left: 4px solid rgba(0,0,0,0.5);
+    border-left: 4px solid #880000;
     width: 1px;
     display: block;
     top: -110px;
@@ -56,13 +78,10 @@ body.on #slide-6 .machine-body .lamp-panel .lamp {
     background: radial-gradient(rgb(169 169 169), #6f6f6d);
 }
 
-body.on #slide-6 .machine-body .lamp-panel .lamp {
-    width: 50px;
-    height: 50px;
-    border-radius: 30px;
+/*body.on #slide-6 .machine-body .lamp-panel .lamp {
     background: radial-gradient(rgb(255 246 181), #ffd023);
     box-shadow: 0 0 15px rgb(255, 245, 181);
-}
+}*/
 
 body.on #slide-6 .machine-body .gear-panel {
     height: 50px;
@@ -108,4 +127,214 @@ body.on #slide-6 .machine-body .button-panel {
     margin: 20px;
     background: linear-gradient(0deg, rgba(100,100,100, 0.5) 0%, rgba(200,200,200, 0.5) 50%, rgba(100,100,100, 0.5) 100%), linear-gradient(90deg, rgba(100,100,100, 0.5) 0%, rgba(200,200,200, 0.5) 50%, rgba(100,100,100, 0.5) 100%);
     box-shadow: inset 0 0 5px 5px rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+body.on #slide-6 .machine-body .button-panel .button{
+    margin: 20px 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+}
+body.on #slide-6 .machine-body .button-panel .button:before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background: radial-gradient(ellipse at center, #520000 0%, #8c2727 60%, #310000 70%);
+    box-shadow: 0px 0px 5px 1px black, 0px 0px 1px 5px white, 0px 0px 0px 6px #585858;
+    margin-bottom: 10px;
+}
+body.on #slide-6 .machine-body .button-panel label[for="reset"] .button:before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background: radial-gradient(ellipse at center, #004b52 0%, #276f8c 60%, #002031 70%);
+    box-shadow: 0px 0px 5px 1px black, 0px 0px 1px 5px white, 0px 0px 0px 6px #585858;
+    margin-bottom: 10px;
+}
+
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .meter:before  {
+    animation: meter;
+    animation-duration: var(--amim-duration);
+}
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .gear:nth-of-type(1),
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .gear:nth-of-type(3){
+    animation: gear1;
+    animation-duration: var(--amim-duration);
+    animation-timing-function: linear;
+}
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .gear:nth-of-type(2){
+    animation: gear2;
+    animation-direction: reverse;
+    animation-duration: var(--amim-duration);
+    animation-timing-function: linear;
+}
+
+
+body.on #slide-6 #reset:checked ~ .functions .machine-container .lamp,
+body.on #slide-6 #reset:checked ~ .functions .machine-container .gear,
+body.on #slide-6 #reset:checked ~ .functions .machine-container .meter:before {
+    animation: emptyAnim;
+}
+
+
+body.on #slide-6 #reset:checked ~ .functions .machine-container .machine-door {
+    animation: close-door;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .machine-door {
+    animation: open-door;
+
+    animation-delay: 2.5s;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .lamp{
+    animation: lamp-1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .lamp:nth-of-type(1){
+    animation-delay: 0s;
+}
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .lamp:nth-of-type(2){
+    animation-delay: 1s;
+}
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .lamp:nth-of-type(3){
+    animation-delay: 2.2s;
+}
+
+@keyframes emptyAnim {}
+
+@keyframes open-door {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+
+}
+@keyframes close-door {
+    0% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+@keyframes lamp-1 {
+    0% {
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        background: radial-gradient(rgb(169 169 169), #6f6f6d);
+    }
+    1% {
+
+        background: radial-gradient(rgb(255 246 181), #ffd023);
+        box-shadow: 0 0 15px rgb(255, 245, 181);
+    }
+    100% {
+
+        background: radial-gradient(rgb(255 246 181), #ffd023);
+        box-shadow: 0 0 15px rgb(255, 245, 181);
+    }
+}
+@keyframes lamp-2 {
+    0% {
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        background: radial-gradient(rgb(169 169 169), #6f6f6d);
+    }
+    1% {
+
+        background: radial-gradient(rgb(255 246 181), #ffd023);
+        box-shadow: 0 0 15px rgb(255, 245, 181);
+    }
+    100% {
+
+        background: radial-gradient(rgb(255 246 181), #ffd023);
+        box-shadow: 0 0 15px rgb(255, 245, 181);
+    }
+}
+
+@keyframes gear1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gear2 {
+    0% {
+        transform: rotate(0deg);
+        top: -72px;
+    }
+    25% {
+        left: 61px;
+    }
+    50% {
+        transform: rotate(180deg);
+        top: -58px;
+    }
+    75% {
+        left: 41px;
+    }
+    100% {
+        transform: rotate(360deg);
+        top: -72px;
+    }
+}
+
+@keyframes meter {
+    0% {
+        transform: rotate(-3deg);
+    }
+    30% {
+        transform: rotate(-87deg);
+    }
+    40% {
+        transform: rotate(-85deg);
+    }
+    50% {
+        transform: rotate(-87deg);
+    }
+    60% {
+        transform: rotate(-85deg);
+    }
+    70% {
+        transform: rotate(-87deg);
+    }
+    80% {
+        transform: rotate(-85deg);
+    }
+    90% {
+        transform: rotate(-87deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
 }

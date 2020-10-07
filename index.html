@@ -859,6 +859,12 @@
     </div>
     <div id="slide-6" class="slide" tabindex="-1">
         <div class="slide-content">
+            <input type="radio" name="func" id="func-calc" class="hidden-control">
+            <input type="radio" name="func" id="func-attr" class="hidden-control">
+            <input type="radio" name="func" id="func-scale" class="hidden-control">
+            <input type="radio" name="func" id="func-rotate" class="hidden-control">
+            <input type="radio" name="func" id="func-translate" class="hidden-control">
+            <input type="radio" name="func" id="reset" class="hidden-control">
             <section class="functions">
                 <div class="machine-container">
                     <div class="machine-body">
@@ -874,8 +880,16 @@
                             <div class="gear">⚙</div>
                         </div>
                         <div class="button-panel">
-                            <div class="button"></div>
+                            <label for="func-calc"><div class="button">calc()</div></label>
+                            <label for="func-attr"><div class="button">attr()</div></label>
+                            <label for="func-scale"><div class="button">scale()</div></label>
+                            <label for="func-rotate"><div class="button">rotate()</div></label>
+                            <label for="func-translate"><div class="button">translate()</div></label>
+                            <label for="reset"><div class="button">RESET</div></label>
                         </div>
+                    </div>
+                    <div class="machine-door">
+
                     </div>
                 </div>
             </section>
