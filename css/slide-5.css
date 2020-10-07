@@ -164,7 +164,7 @@ body.on #slide-5 .content .circles .outer-circle .fire-symbol{
     margin-left: -150px;
     width: 300px;
     height: 300px;
-    filter: blur(5px);
+
 }
 body.on #slide-5 .content .circles .outer-circle .fire-symbol svg path:last-of-type {
     fill: var(--fire-color-primary);
