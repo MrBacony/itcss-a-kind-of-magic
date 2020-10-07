@@ -165,6 +165,10 @@ body.on #slide-5 .content .circles .outer-circle .fire-symbol{
     width: 300px;
     height: 300px;
 
+    --fire-color-primary: #700;
+    --fire-color-accent: orange;
+    --fire-color-shadow: #700;
+    --fire-color-glimmer: #ffb66b;
 }
 body.on #slide-5 .content .circles .outer-circle .fire-symbol svg path:last-of-type {
     fill: var(--fire-color-primary);
