@@ -1,0 +1,23 @@
+body.on #slide-7 .slide-content > h2 {
+    color: #fdf3c1;
+    margin-bottom: 60px;
+}
+
+body.on #slide-7 .slide-content > ul li {
+    margin: 15px 0;
+    list-style-type: none;
+}
+
+body.on #slide-7 .slide-content > ul li a {
+    color: #ffffff;
+    font-family: 'EB Garamond', serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+body.on #slide-7 .slide-content > ul li a:before {
+    content: '🔗';
+    margin-right: 10px ;
+}
+
+

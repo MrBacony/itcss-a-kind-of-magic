@@ -1,0 +1,8 @@
+body.on #slide-8 .slide-content > h2 {
+    color: #fdf3c1;
+}
+
+body.on #slide-8 .slide-content > p {
+    color: #ffffff;
+}
+
