@@ -4,6 +4,7 @@ body.on #slide-6 {
 
 body.on #slide-6 .machine-container {
     position: relative;
+
 }
 body.on #slide-6 .machine-body {
     display: block;
@@ -26,7 +27,7 @@ body.on #slide-6 .machine-door {
     border: 1px solid;
     border-radius: 5px;
     position: absolute;
-    right: 0;
+    left: 395px;
     top: 10px;
     z-index: 1;
     transform: rotate(0deg);
@@ -218,6 +219,223 @@ body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .la
 }
 body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-container .lamp:nth-of-type(3){
     animation-delay: 2.2s;
+}
+
+
+body.on #slide-6 .machine-door-content {
+    position: absolute;
+    left: 417px;
+    top: 0;
+    width: 200px;
+    height: 100%;
+}
+body.on #slide-6 .machine-door-content .content-wrapper {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+}
+body.on #slide-6 .machine-door-content .content-wrapper h1 {
+    color: #f1c232;
+}
+body.on #slide-6 .machine-door-content .content-wrapper.content-calc .progress-bar {
+    width: 0;
+    border: 1px solid;
+    height: 30px;
+    border-radius: 0 20px 20px 0;
+    position: absolute;
+    top: 80px;
+    transform: translate(-260px, 0);
+    background: linear-gradient(0deg, transparent 0%, rgba(255,255,255, 0.1) 20% , transparent);
+    transform-origin: bottom left;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+body.on #slide-6 .machine-door-content .content-wrapper.content-calc .progress-bar:after{
+    content: '';
+    display: block;
+    right: 0;
+    background: linear-gradient(0deg, #0a9401 0%,rgba(255, 255, 255, 0.5) 20%, #0a9401 100%), #0a9401;
+    height: 100%;
+    width: 50%;
+}
+body.on #slide-6 .machine-door-content .content-wrapper.content-calc .progress-bar:before{
+    content: '';
+    display: block;
+    right: 0;
+    background: linear-gradient(0deg, #ff6f00 0%,rgba(255, 255, 255, 0.5) 20%, #ff6f00 100%), #ff6f00;
+    height: 100%;
+    width: 20px;
+}
+
+body.on #slide-6 .machine-door-content .content-wrapper .grabber {
+    width: 0;
+    left: 0;
+    height: 15px;
+    position: absolute;
+    top: 110px;
+    transform: translate(-260px, 0);
+    background: linear-gradient(0deg, #292929 0%, #b7b7b7 50%, #6f6f6f 100%);
+    transition: 1s all;
+}
+
+body.on #slide-6 .machine-door-content .content-wrapper .grabber:before {
+    content: '';
+    display: block;
+    background: radial-gradient(ellipse at center, #b7b7b7 0%, #353535 100%);
+    width: 20px;
+    height: 20px;
+    left: 145px;
+    top: -3px;
+    position: absolute;
+    border-radius: 10px;
+}
+body.on #slide-6 #func-calc:checked ~ .functions .content-wrapper.content-calc,
+body.on #slide-6 #func-attr:checked ~ .functions .content-wrapper.content-attr{
+    display: flex;
+}
+body.on #slide-6 #func-calc:checked ~ .functions .content-wrapper.content-calc .progress-bar {
+    animation: move-calc;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+body.on #slide-6 #func-calc:checked ~ .functions .content-wrapper.content-calc .grabber,
+body.on #slide-6 #func-attr:checked ~ .functions .content-wrapper.content-attr .grabber{
+    animation: move-grabber;
+    animation-duration: 1.5s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+body.on #slide-6 #reset:checked ~ .functions  .content-wrapper.content-calc .grabber {
+    animation: move-grabber-back;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+body.on #slide-6 #reset:checked ~ .functions .content-wrapper.content-calc .progress-bar {
+    animation: move-calc-back;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+body.on #slide-6 .machine-door-content .content-wrapper.content-attr .sign {
+    display: flex;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: linear-gradient(0deg, rgba(100,100,100, 0.5) 0%, rgba(200,200,200, 0.5) 50%, rgba(100,100,100, 0.5) 100%), linear-gradient(90deg, rgba(100,100,100, 0.5) 0%, rgba(200,200,200, 0.5) 50%, rgba(100,100,100, 0.5) 100%);
+    left: 0;
+    transform: translate(-260px, 0);
+    top: 85px;
+    justify-content: center;
+    align-items: center;
+}
+body.on #slide-6 #func-attr:checked ~ .functions .content-wrapper.content-attr .sign {
+    animation: move-sign;
+    animation-duration: 1.5s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+
+}
+body.on #slide-6 .machine-door-content .content-wrapper.content-attr .sign:before {
+    content: attr(data-content);
+}
+
+@keyframes move-sign {
+    from {
+        width: 0;
+        left: 0;
+    }
+    25% {
+        width: 200px;
+        left: -66px;
+    }
+    to {
+        transform: translate(215px, 0);
+        width: 200px;
+        left: -66px;
+    }
+}
+
+@keyframes move-grabber {
+    from {
+        width: 0;
+        left: 0;
+    }
+    25% {
+        width: 150px;
+        left:-225px;
+    }
+    to {
+        transform: translate(215px, 0);
+        width: 150px;
+        left:-225px;
+    }
+}
+@keyframes move-grabber-back {
+    from {
+
+        transform: translate(215px, 0);
+        width: 150px;
+        left:-225px;
+    }
+    75% {
+        width: 150px;
+        left:-225px;
+    }
+    to {
+        width: 0;
+        left: 0;
+    }
+}
+
+@keyframes move-calc {
+    from {
+        width: 0;
+
+        transform: translate(-260px, 0) rotate(0deg);
+    }
+    25% {
+        width: 300px;
+    }
+    75% {
+        transform: translate(200px, 0) rotate(0deg);
+    }
+    to {
+        width: 300px;
+        transform: translate(200px, 0) rotate(90deg);
+    }
+}
+
+@keyframes move-calc-back {
+    from {
+
+        width: 300px;
+        transform: translate(200px, 0) rotate(90deg);
+    }
+    25% {
+        transform: translate(200px, 0) rotate(0deg);
+    }
+    75% {
+        width: 300px;
+    }
+    to {
+        width: 0;
+        transform: translate(-260px, 0) rotate(0deg);
+    }
 }
 
 @keyframes emptyAnim {}
