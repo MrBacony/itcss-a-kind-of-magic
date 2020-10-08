@@ -141,6 +141,8 @@ body.on #slide-6 .machine-body .button-panel .button{
     justify-content: center;
     align-items: center;
     width: 80px;
+    font-family: 'EB Garamond', serif;
+    color: #1b1b1b;
 }
 body.on #slide-6 .machine-body .button-panel .button:before {
     content: '';
@@ -238,6 +240,7 @@ body.on #slide-6 .machine-door-content .content-wrapper {
 }
 body.on #slide-6 .machine-door-content .content-wrapper h1 {
     color: #f1c232;
+    opacity: 0;
 }
 body.on #slide-6 .machine-door-content .content-wrapper.content-calc .progress-bar {
     width: 0;
@@ -271,6 +274,51 @@ body.on #slide-6 .machine-door-content .content-wrapper.content-calc .progress-b
     width: 20px;
 }
 
+body.on #slide-6 .machine-door-content .content-wrapper.content-scale div {
+    position: absolute;
+    transform: translateX(-215px) scaleX(-2) scaleY(2);
+    font-size: 2rem;
+    top: 115px;
+}
+body.on #slide-6 .machine-door-content .content-wrapper.content-scale div:first-of-type {
+    left: 15px;
+    transform: translateX(-215px) scaleX(-1);
+    top: 102px;
+}
+
+body.on #slide-6 .machine-door-content .content-wrapper.content-rotate div {
+    left: 15px;
+    transform: translateX(-215px) scaleX(-1);
+    top: 114px;
+    position: absolute;
+    font-size: 2rem;
+}
+
+body.on #slide-6 .machine-door-content .content-wrapper.content-rotate div:nth-of-type(1) {
+    left: 75px;
+    transform: translateX(-215px) scaleX(-1);
+}
+
+body.on #slide-6 .machine-door-content .content-wrapper.content-filter div {
+    left: -13px;
+    transform: translateX(-215px) scaleX(-1);
+    top: 78px;
+    position: absolute;
+    font-size: 4rem;
+    filter: saturate(100);
+}
+body.on #slide-6 .machine-door-content .content-wrapper.content-filter div:nth-of-type(2) {
+    left: 33px;
+    filter: sepia(100);
+
+}
+
+body.on #slide-6 .machine-door-content .content-wrapper.content-filter div:nth-of-type(3) {
+    left: 78px;
+    filter: blur(2px);
+}
+
+
 body.on #slide-6 .machine-door-content .content-wrapper .grabber {
     width: 0;
     left: 0;
@@ -294,7 +342,10 @@ body.on #slide-6 .machine-door-content .content-wrapper .grabber:before {
     border-radius: 10px;
 }
 body.on #slide-6 #func-calc:checked ~ .functions .content-wrapper.content-calc,
-body.on #slide-6 #func-attr:checked ~ .functions .content-wrapper.content-attr{
+body.on #slide-6 #func-attr:checked ~ .functions .content-wrapper.content-attr,
+body.on #slide-6 #func-scale:checked ~ .functions .content-wrapper.content-scale,
+body.on #slide-6 #func-rotate:checked ~ .functions .content-wrapper.content-rotate,
+body.on #slide-6 #func-filter:checked ~ .functions .content-wrapper.content-filter{
     display: flex;
 }
 body.on #slide-6 #func-calc:checked ~ .functions .content-wrapper.content-calc .progress-bar {
@@ -334,7 +385,10 @@ body.on #slide-6 .machine-door-content .content-wrapper.content-attr .sign {
     position: absolute;
     width: 200px;
     height: 60px;
-    background: linear-gradient(0deg, rgba(100,100,100, 0.5) 0%, rgba(200,200,200, 0.5) 50%, rgba(100,100,100, 0.5) 100%), linear-gradient(90deg, rgba(100,100,100, 0.5) 0%, rgba(200,200,200, 0.5) 50%, rgba(100,100,100, 0.5) 100%);
+    background: url(../assets/wood.png), #3c1202;
+    box-shadow: inset 0 0 5px 5px rgba(0,0,0,0.2);
+    background-size: cover;
+    border: 1px solid black;
     left: 0;
     transform: translate(-260px, 0);
     top: 85px;
@@ -352,6 +406,105 @@ body.on #slide-6 #func-attr:checked ~ .functions .content-wrapper.content-attr .
 }
 body.on #slide-6 .machine-door-content .content-wrapper.content-attr .sign:before {
     content: attr(data-content);
+}
+
+body.on #slide-6 input[type="radio"]:checked ~ .functions .machine-door-content .content-wrapper h1 {
+    animation: fade-in;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+body.on #slide-6 #func-scale:checked ~ .functions .content-wrapper.content-scale div {
+    animation: move-scale;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+body.on #slide-6 #func-scale:checked ~ .functions .content-wrapper.content-scale div:first-of-type {
+    animation: move-scale-2;
+    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+
+body.on #slide-6 #func-rotate:checked ~ .functions .content-wrapper.content-rotate div:nth-of-type(1) {
+    animation: move-rotate;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+body.on #slide-6 #func-rotate:checked ~ .functions .content-wrapper.content-rotate div:nth-of-type(2) {
+    animation: move-rotate;
+    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+body.on #slide-6 #func-filter:checked ~ .functions .content-wrapper.content-filter div {
+    animation: move-filter;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes move-filter {
+    from {
+        transform: translateX(-215px);
+    }
+    to {
+        transform: translateX(5px);
+    }
+}
+
+
+@keyframes move-rotate {
+    from {
+        transform: translateX(-215px) rotate(0deg);
+    }
+    to {
+        transform: translateX(5px)  rotate(720deg);
+    }
+}
+
+@keyframes move-scale {
+    from {
+        transform: translateX(-215px) scaleX(-1);
+    }
+    to {
+        transform: translateX(5px)  scaleX(-1);
+    }
+}
+@keyframes move-scale-2 {
+    from {
+        transform: translateX(-215px) scaleX(-2) scaleY(2);
+    }
+    to {
+        transform: translateX(5px) scaleX(-2) scaleY(2);
+    }
 }
 
 @keyframes move-sign {
