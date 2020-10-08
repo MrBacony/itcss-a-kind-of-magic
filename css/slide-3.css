@@ -41,6 +41,7 @@ body.on #slide-3 .book-page {
     transform: rotateY(0);
     transform-origin: left bottom;
     transition: transform 4s;
+    backface-visibility: hidden;
 }
 
 /* BOOK Z-INDEX HANDLING */
@@ -242,6 +243,7 @@ body.on #slide-3 .book-page .page-content {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    backface-visibility: hidden;
 }
 body.on #slide-3 .book-page .page-content.back {
     z-index: 0;
