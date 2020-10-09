@@ -5,7 +5,7 @@ body.on #slide-1 h1 {
 }
 
 body.on #slide-1 .img {
-    background: url('../assets/lampe.png') no-repeat;
+    background: url('../assets/lampe.svg') no-repeat;
     background-size: contain;
     margin-top: 70px;
     width: 417px;
