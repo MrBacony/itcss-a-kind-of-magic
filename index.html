@@ -566,13 +566,14 @@
                                 <h3 class="code-hl">Sample HTML:</h3>
                                 <div class="code">
                                 <pre><code>&lt;div class="box">
-    &lt;div id="box-1" class="box-item first">1&lt;/div>
-    &lt;div id="box-2" class="box-item active">2&lt;/div>
-    &lt;div id="box-3" class="box-item">3&lt;/div>
-    &lt;div id="box-4" class="box-item last">
+    &lt;p>TEXT ELEMENT&lt;/p>
+    <b>&lt;div id="box-1" class="box-item first">1&lt;/div></b>
+    <b>&lt;div id="box-2" class="box-item active">2&lt;/div></b>
+    <b>&lt;div id="box-3" class="box-item">3&lt;/div></b>
+    <b>&lt;div id="box-4" class="box-item last"></b>
         &lt;div class="inner">4.1&lt;/div>
         &lt;div class="inner">4.2&lt;/div>
-    &lt;/div>
+    <b>&lt;/div></b>
 &lt;/div></code></pre>
                                 </div>
                                 <h3 class="code-hl">Sample CSS:</h3>
@@ -616,6 +617,70 @@
                                 <h3 class="code-hl">Preview:</h3>
                                 <div class="example">
                                     <div class="box">
+                                        <p>TEXT ELEMENT</p>
+                                        <div id="box-1" class="box-item first">1</div>
+                                        <div id="box-2" class="box-item active">2</div>
+                                        <div id="box-3" class="box-item">3</div>
+                                        <div id="box-4" class="box-item last">
+                                            <div class="inner">4.1</div>
+                                            <div class="inner">4.2</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-content back">
+                                <h3 class="code-hl">Sample HTML:</h3>
+                                <div class="code">
+                                <pre><code>&lt;div class="box">
+    &lt;p>TEXT ELEMENT&lt;/p>
+    <b>&lt;div id="box-1" class="box-item first">1&lt;/div></b>
+    &lt;div id="box-2" class="box-item active">2&lt;/div>
+    &lt;div id="box-3" class="box-item">3&lt;/div>
+    &lt;div id="box-4" class="box-item last">
+        &lt;div class="inner">4.1&lt;/div>
+        &lt;div class="inner">4.2&lt;/div>
+    &lt;/div>
+&lt;/div></code></pre>
+                                </div>
+                                <h3 class="code-hl">Sample CSS:</h3>
+                                <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label for="book-page-11">
+                        <div class="book-page">
+                            <div class="page-content front">
+                                <h3>Function Selctors: nth-child</h3>
+                                <p>Select the nth element of a type:</p>
+                                <div class="code">
+                            <pre><code>.box-item:nth-child(2){
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                                </div>
+                                <h3 class="code-hl">Preview:</h3>
+                                <div class="example">
+                                    <div class="box">
+                                        <p>TEXT ELEMENT</p>
                                         <div id="box-1" class="box-item first">1</div>
                                         <div id="box-2" class="box-item active">2</div>
                                         <div id="box-3" class="box-item">3</div>
