@@ -38,3 +38,21 @@ body.on .hidden-control:nth-of-type(8) {
 body.on .hidden-control:nth-of-type(9) {
     left: calc(20px * 8);
 }
+body.on .hidden-control:nth-of-type(10) {
+    left: calc(20px * 9);
+}
+body.on .hidden-control:nth-of-type(11) {
+    left: calc(20px * 10);
+}
+body.on .hidden-control:nth-of-type(12) {
+    left: calc(20px * 11);
+}
+body.on .hidden-control:nth-of-type(13) {
+    left: calc(20px * 12);
+}
+body.on .hidden-control:nth-of-type(14) {
+    left: calc(20px * 13);
+}
+body.on .hidden-control:nth-of-type(15) {
+    left: calc(20px * 14);
+}

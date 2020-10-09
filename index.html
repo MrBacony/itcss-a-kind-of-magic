@@ -49,6 +49,9 @@
                 <input type="radio" id="book-page-7" name="book" class="hidden-control" tabindex="-1">
                 <input type="radio" id="book-page-8" name="book" class="hidden-control" tabindex="-1">
                 <input type="radio" id="book-page-9" name="book" class="hidden-control" tabindex="-1">
+                <input type="radio" id="book-page-10" name="book" class="hidden-control" tabindex="-1">
+                <input type="radio" id="book-page-11" name="book" class="hidden-control" tabindex="-1">
+                <input type="radio" id="book-page-12" name="book" class="hidden-control" tabindex="-1">
                 <input type="radio" id="cover-back" name="book" class="hidden-control" tabindex="-1">
                 <div class="book">
                     <label for="cover-front">
@@ -555,6 +558,70 @@
                                         <div id="box-3" class="box-item" magic="wonder">
                                             <div class="inner">3.1</div>
                                             <div class="inner">3.2</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-content back">
+                                <h3 class="code-hl">Sample HTML:</h3>
+                                <div class="code">
+                                <pre><code>&lt;div class="box">
+    &lt;div id="box-1" class="box-item first">1&lt;/div>
+    &lt;div id="box-2" class="box-item active">2&lt;/div>
+    &lt;div id="box-3" class="box-item">3&lt;/div>
+    &lt;div id="box-4" class="box-item last">
+        &lt;div class="inner">4.1&lt;/div>
+        &lt;div class="inner">4.2&lt;/div>
+    &lt;/div>
+&lt;/div></code></pre>
+                                </div>
+                                <h3 class="code-hl">Sample CSS:</h3>
+                                <div class="code">
+                                <pre><code>div { border: 1px solid rgba(0,0,0,0.2); }
+
+.box {
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+}
+
+.box-item, .inner {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner { flex: 1; }
+
+#box-1 { color: red; }
+#box-2 { color: green; }
+#box-3 { color: blue; }
+#box-4 { color: purple; }</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label for="book-page-10">
+                        <div class="book-page">
+                            <div class="page-content front">
+                                <h3>Function Selctors: nth-of-type</h3>
+                                <p>Select the nth element of a type:</p>
+                                <div class="code">
+                            <pre><code>.box-item:nth-of-type(2n){
+    border: 1px solid rgb(200,100,100);
+}
+.box-item:nth-of-type(2n-1){
+    border: 1px solid rgb(200,100,100);
+}</code></pre>
+                                </div>
+                                <h3 class="code-hl">Preview:</h3>
+                                <div class="example">
+                                    <div class="box">
+                                        <div id="box-1" class="box-item first">1</div>
+                                        <div id="box-2" class="box-item active">2</div>
+                                        <div id="box-3" class="box-item">3</div>
+                                        <div id="box-4" class="box-item last">
+                                            <div class="inner">4.1</div>
+                                            <div class="inner">4.2</div>
                                         </div>
                                     </div>
                                 </div>

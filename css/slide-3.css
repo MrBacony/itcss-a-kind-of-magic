@@ -45,34 +45,43 @@ body.on #slide-3 .book-page {
 
 /* BOOK Z-INDEX HANDLING */
 body.on #slide-3 .book > label[for="cover-front"] {
-    z-index: 10;
+    z-index: 30;
 }
 body.on #slide-3 .book > label[for="book-page-1"] {
-    z-index: 9;
+    z-index: 29;
 }
 body.on #slide-3 .book > label[for="book-page-2"] {
-    z-index: 8;
+    z-index: 28;
 }
 body.on #slide-3 .book > label[for="book-page-3"] {
-    z-index: 7;
+    z-index: 27;
 }
 body.on #slide-3 .book > label[for="book-page-4"] {
-    z-index: 6;
+    z-index: 26;
 }
 body.on #slide-3 .book > label[for="book-page-5"] {
-    z-index: 5;
+    z-index: 25;
 }
 body.on #slide-3 .book > label[for="book-page-6"] {
-    z-index: 4;
+    z-index: 24;
 }
 body.on #slide-3 .book > label[for="book-page-7"] {
-    z-index: 3;
+    z-index: 23;
 }
 body.on #slide-3 .book > label[for="book-page-8"] {
-    z-index: 2;
+    z-index: 22;
 }
 body.on #slide-3 .book > label[for="book-page-9"] {
-    z-index: 1;
+    z-index: 21;
+}
+body.on #slide-3 .book > label[for="book-page-10"] {
+    z-index: 21;
+}
+body.on #slide-3 .book > label[for="book-page-11"] {
+    z-index: 21;
+}
+body.on #slide-3 .book > label[for="book-page-12"] {
+    z-index: 20;
 }
 body.on #slide-3 .book > label[for="cover-back"] {
     z-index: 0;
@@ -84,41 +93,6 @@ body.on #slide-3 .book > label[for="cover-back"] {
 .hidden-control {
     opacity: 1;
     top: 0;
-}
-
-body.on #cover-front.hidden-control {
-    left: calc(20px * 0);
-}
-body.on #book-page-1.hidden-control {
-    left: calc(20px * 1);
-}
-body.on #book-page-2.hidden-control {
-    left: calc(20px * 2);
-}
-body.on #book-page-3.hidden-control {
-    left: calc(20px * 3);
-}
-body.on #book-page-4.hidden-control {
-    left: calc(20px * 4);
-}
-body.on #book-page-5.hidden-control {
-    left: calc(20px * 5);
-}
-body.on #book-page-6.hidden-control {
-    left: calc(20px * 6);
-}
-body.on #book-page-7.hidden-control {
-    left: calc(20px * 7);
-}
-body.on #book-page-8.hidden-control {
-    left: calc(20px * 8);
-}
-body.on #book-page-9.hidden-control {
-    left: calc(20px * 9);
-}
-
-body.on #cover-back.hidden-control {
-    left: calc(20px * 10);
 }
 
 /* BOOK COVER */
@@ -261,7 +235,10 @@ body.on #book-page-5:checked ~ .book label[for="book-page-5"] .book-page,
 body.on #book-page-6:checked ~ .book label[for="book-page-6"] .book-page,
 body.on #book-page-7:checked ~ .book label[for="book-page-7"] .book-page,
 body.on #book-page-8:checked ~ .book label[for="book-page-8"] .book-page,
-body.on #book-page-9:checked ~ .book label[for="book-page-9"] .book-page {
+body.on #book-page-9:checked ~ .book label[for="book-page-9"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-10"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-11"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-12"] .book-page {
     left: var(--book-width);
     transform: rotateY(-180deg);
 }
@@ -331,6 +308,45 @@ body.on #book-page-9:checked ~ .book label[for="book-page-7"],
 body.on #book-page-9:checked ~ .book label[for="book-page-8"],
 body.on #book-page-9:checked ~ .book label[for="book-page-9"],
 
+body.on #book-page-10:checked ~ .book label[for="cover-front"],
+body.on #book-page-10:checked ~ .book label[for="book-page-1"],
+body.on #book-page-10:checked ~ .book label[for="book-page-2"],
+body.on #book-page-10:checked ~ .book label[for="book-page-3"],
+body.on #book-page-10:checked ~ .book label[for="book-page-4"],
+body.on #book-page-10:checked ~ .book label[for="book-page-5"],
+body.on #book-page-10:checked ~ .book label[for="book-page-6"],
+body.on #book-page-10:checked ~ .book label[for="book-page-7"],
+body.on #book-page-10:checked ~ .book label[for="book-page-8"],
+body.on #book-page-10:checked ~ .book label[for="book-page-9"],
+body.on #book-page-10:checked ~ .book label[for="book-page-10"],
+
+body.on #book-page-11:checked ~ .book label[for="cover-front"],
+body.on #book-page-11:checked ~ .book label[for="book-page-1"],
+body.on #book-page-11:checked ~ .book label[for="book-page-2"],
+body.on #book-page-11:checked ~ .book label[for="book-page-3"],
+body.on #book-page-11:checked ~ .book label[for="book-page-4"],
+body.on #book-page-11:checked ~ .book label[for="book-page-5"],
+body.on #book-page-11:checked ~ .book label[for="book-page-6"],
+body.on #book-page-11:checked ~ .book label[for="book-page-7"],
+body.on #book-page-11:checked ~ .book label[for="book-page-8"],
+body.on #book-page-11:checked ~ .book label[for="book-page-9"],
+body.on #book-page-11:checked ~ .book label[for="book-page-10"],
+body.on #book-page-11:checked ~ .book label[for="book-page-11"],
+
+body.on #book-page-12:checked ~ .book label[for="cover-front"],
+body.on #book-page-12:checked ~ .book label[for="book-page-1"],
+body.on #book-page-12:checked ~ .book label[for="book-page-2"],
+body.on #book-page-12:checked ~ .book label[for="book-page-3"],
+body.on #book-page-12:checked ~ .book label[for="book-page-4"],
+body.on #book-page-12:checked ~ .book label[for="book-page-5"],
+body.on #book-page-12:checked ~ .book label[for="book-page-6"],
+body.on #book-page-12:checked ~ .book label[for="book-page-7"],
+body.on #book-page-12:checked ~ .book label[for="book-page-8"],
+body.on #book-page-12:checked ~ .book label[for="book-page-9"],
+body.on #book-page-12:checked ~ .book label[for="book-page-10"],
+body.on #book-page-12:checked ~ .book label[for="book-page-11"],
+body.on #book-page-12:checked ~ .book label[for="book-page-12"],
+
 body.on #cover-back:checked ~ .book label[for="cover-front"],
 body.on #cover-back:checked ~ .book label[for="book-page-1"],
 body.on #cover-back:checked ~ .book label[for="book-page-2"],
@@ -341,6 +357,9 @@ body.on #cover-back:checked ~ .book label[for="book-page-6"],
 body.on #cover-back:checked ~ .book label[for="book-page-7"],
 body.on #cover-back:checked ~ .book label[for="book-page-8"],
 body.on #cover-back:checked ~ .book label[for="book-page-9"],
+body.on #cover-back:checked ~ .book label[for="book-page-10"],
+body.on #cover-back:checked ~ .book label[for="book-page-11"],
+body.on #cover-back:checked ~ .book label[for="book-page-12"],
 body.on #cover-back:checked ~ .book label[for="cover-back"]  {
     transform: translateX(calc(var(--book-width) * -1));
 }
@@ -399,6 +418,42 @@ body.on #book-page-9:checked ~ .book label[for="book-page-6"] .book-page,
 body.on #book-page-9:checked ~ .book label[for="book-page-7"] .book-page,
 body.on #book-page-9:checked ~ .book label[for="book-page-8"] .book-page,
 
+body.on #book-page-10:checked ~ .book label[for="cover-front"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-1"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-2"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-3"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-4"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-5"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-6"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-7"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-8"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-9"] .book-page,
+
+body.on #book-page-11:checked ~ .book label[for="cover-front"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-1"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-2"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-3"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-4"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-5"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-6"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-7"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-8"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-9"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-10"] .book-page,
+
+body.on #book-page-12:checked ~ .book label[for="cover-front"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-1"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-2"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-3"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-4"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-5"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-6"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-7"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-8"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-9"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-10"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-11"] .book-page,
+
 body.on #cover-back:checked ~ .book label[for="cover-front"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-1"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-2"] .book-page,
@@ -409,6 +464,9 @@ body.on #cover-back:checked ~ .book label[for="book-page-6"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-7"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-8"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-9"] .book-page,
+body.on #cover-back:checked ~ .book label[for="book-page-10"] .book-page,
+body.on #cover-back:checked ~ .book label[for="book-page-11"] .book-page,
+body.on #cover-back:checked ~ .book label[for="book-page-12"] .book-page,
 body.on #cover-back:checked ~ .book label[for="cover-back"] .book-page  {
     left: var(--book-width);
 }
@@ -468,6 +526,42 @@ body.on #book-page-9:checked ~ .book label[for="book-page-5"],
 body.on #book-page-9:checked ~ .book label[for="book-page-6"],
 body.on #book-page-9:checked ~ .book label[for="book-page-7"],
 body.on #book-page-9:checked ~ .book label[for="book-page-8"],
+
+body.on #book-page-10:checked ~ .book label[for="cover-front"],
+body.on #book-page-10:checked ~ .book label[for="book-page-1"],
+body.on #book-page-10:checked ~ .book label[for="book-page-2"],
+body.on #book-page-10:checked ~ .book label[for="book-page-3"],
+body.on #book-page-10:checked ~ .book label[for="book-page-4"],
+body.on #book-page-10:checked ~ .book label[for="book-page-5"],
+body.on #book-page-10:checked ~ .book label[for="book-page-6"],
+body.on #book-page-10:checked ~ .book label[for="book-page-7"],
+body.on #book-page-10:checked ~ .book label[for="book-page-8"],
+body.on #book-page-10:checked ~ .book label[for="book-page-9"],
+
+body.on #book-page-11:checked ~ .book label[for="cover-front"],
+body.on #book-page-11:checked ~ .book label[for="book-page-1"],
+body.on #book-page-11:checked ~ .book label[for="book-page-2"],
+body.on #book-page-11:checked ~ .book label[for="book-page-3"],
+body.on #book-page-11:checked ~ .book label[for="book-page-4"],
+body.on #book-page-11:checked ~ .book label[for="book-page-5"],
+body.on #book-page-11:checked ~ .book label[for="book-page-6"],
+body.on #book-page-11:checked ~ .book label[for="book-page-7"],
+body.on #book-page-11:checked ~ .book label[for="book-page-8"],
+body.on #book-page-11:checked ~ .book label[for="book-page-9"],
+body.on #book-page-11:checked ~ .book label[for="book-page-10"],
+
+body.on #book-page-12:checked ~ .book label[for="cover-front"],
+body.on #book-page-12:checked ~ .book label[for="book-page-1"],
+body.on #book-page-12:checked ~ .book label[for="book-page-2"],
+body.on #book-page-12:checked ~ .book label[for="book-page-3"],
+body.on #book-page-12:checked ~ .book label[for="book-page-4"],
+body.on #book-page-12:checked ~ .book label[for="book-page-5"],
+body.on #book-page-12:checked ~ .book label[for="book-page-6"],
+body.on #book-page-12:checked ~ .book label[for="book-page-7"],
+body.on #book-page-12:checked ~ .book label[for="book-page-8"],
+body.on #book-page-12:checked ~ .book label[for="book-page-9"],
+body.on #book-page-12:checked ~ .book label[for="book-page-10"],
+body.on #book-page-12:checked ~ .book label[for="book-page-11"],
 
 body.on #cover-back:checked  ~ .book label[for="cover-front"],
 body.on #cover-back:checked  ~ .book label[for="book-page-1"],
@@ -536,6 +630,42 @@ body.on #book-page-9:checked ~ .book label[for="book-page-6"] .book-page,
 body.on #book-page-9:checked ~ .book label[for="book-page-7"] .book-page,
 body.on #book-page-9:checked ~ .book label[for="book-page-8"] .book-page,
 
+body.on #book-page-10:checked ~ .book .book-cover,
+body.on #book-page-10:checked ~ .book label[for="book-page-1"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-2"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-3"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-4"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-5"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-6"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-7"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-8"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-9"] .book-page,
+
+body.on #book-page-11:checked ~ .book .book-cover,
+body.on #book-page-11:checked ~ .book label[for="book-page-1"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-2"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-3"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-4"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-5"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-6"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-7"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-8"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-9"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-10"] .book-page,
+
+body.on #book-page-12:checked ~ .book .book-cover,
+body.on #book-page-12:checked ~ .book label[for="book-page-1"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-2"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-3"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-4"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-5"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-6"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-7"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-8"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-9"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-10"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-11"] .book-page,
+
 body.on #cover-back:checked  ~ .book .book-cover,
 body.on #cover-back:checked ~ .book label[for="book-page-1"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-2"] .book-page,
@@ -545,7 +675,10 @@ body.on #cover-back:checked ~ .book label[for="book-page-5"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-6"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-7"] .book-page,
 body.on #cover-back:checked ~ .book label[for="book-page-8"] .book-page,
-body.on #cover-back:checked ~ .book label[for="book-page-9"] .book-page
+body.on #cover-back:checked ~ .book label[for="book-page-9"] .book-page,
+body.on #cover-back:checked ~ .book label[for="book-page-10"] .book-page,
+body.on #cover-back:checked ~ .book label[for="book-page-11"] .book-page,
+body.on #cover-back:checked ~ .book label[for="book-page-12"] .book-page
 {
     transform: rotateY(calc(var(--rotation-flip) * -1));
     transform-origin: left bottom;
@@ -561,7 +694,10 @@ body.on #book-page-5:checked ~ .book label[for="book-page-5"] .book-page,
 body.on #book-page-6:checked ~ .book label[for="book-page-6"] .book-page,
 body.on #book-page-7:checked ~ .book label[for="book-page-7"] .book-page,
 body.on #book-page-8:checked ~ .book label[for="book-page-8"] .book-page,
-body.on #book-page-9:checked ~ .book label[for="book-page-9"] .book-page {
+body.on #book-page-9:checked ~ .book label[for="book-page-9"] .book-page,
+body.on #book-page-10:checked ~ .book label[for="book-page-10"] .book-page,
+body.on #book-page-11:checked ~ .book label[for="book-page-11"] .book-page,
+body.on #book-page-12:checked ~ .book label[for="book-page-12"] .book-page {
     transform: rotateY(calc(var(--rotation-flip) * -1));
     transform-origin: left bottom;
 }
@@ -612,10 +748,13 @@ body.on #slide-3 label[for='book-page-5'] .book-page .page-content.front .box .b
 body.on #slide-3 label[for='book-page-6'] .book-page .page-content.front .box .box-item.active ~ .box-item,
 body.on #slide-3 label[for='book-page-7'] .book-page .page-content.front .box .box-item[magic],
 body.on #slide-3 label[for='book-page-8'] .book-page .page-content.front .box .box-item[magic="wonder"],
-body.on #slide-3 label[for='book-page-9'] .book-page .page-content.front .box .box-item[magic*="won"]{
+body.on #slide-3 label[for='book-page-9'] .book-page .page-content.front .box .box-item[magic*="won"],
+body.on #slide-3 label[for='book-page-10'] .book-page .page-content.front .box .box-item:nth-of-type(2n){
     border: 1px solid rgb(200,100,100);
 }
-
+body.on #slide-3 label[for='book-page-10'] .book-page .page-content.front .box .box-item:nth-of-type(2n-1) {
+    border: 1px solid rgb(100,100,200);
+}
 
 
 /* PAGES CONTENT */
