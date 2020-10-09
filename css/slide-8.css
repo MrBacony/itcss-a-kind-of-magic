@@ -2,7 +2,50 @@ body.on #slide-8 .slide-content > h2 {
     color: #fdf3c1;
 }
 
-body.on #slide-8 .slide-content > p {
+body.on #slide-8 .slide-content p {
     color: #ffffff;
+
+    font-size: 1.2rem;
 }
 
+body.on #slide-8 .github{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+
+body.on #slide-8 .github .qrcode {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+body.on #slide-8 .github .links {
+    margin-top: 20px;
+}
+body.on #slide-8 .github .qrcode img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5px;
+}
+
+body.on #slide-8 b {
+    color: #f1c232;
+}
+
+body.on #slide-8 a {
+    color: #ffffff;
+    font-family: 'EB Garamond', serif;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+body.on #slide-8 a:hover {
+    border-bottom: 1px solid;
+}
+
+body.on #slide-8 a:before {
+    content: '🔗';
+    margin-right: 10px ;
+}
