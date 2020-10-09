@@ -8,7 +8,8 @@ body.on #slide-5 {
 
 
 body.on #slide-5 {
-    background: url(../assets/cave_transparent.png), radial-gradient(ellipse at center, #000000 0%,#1d1d1d 44%,#191919 90%);
+    background: url(../assets/cave_transparent.png) no-repeat, radial-gradient(ellipse at center, #000000 0%,#1d1d1d 44%,#191919 90%);
+    background-size: cover;
 }
 
 body.on #slide-5 .slide-content > h1 {
